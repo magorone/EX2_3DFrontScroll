@@ -9,6 +9,7 @@
 	--side-small: 26;
 	--side-big: 36;
 	--depth: 4000px;
+	--transition: .75s cubic-bezier(0.000, 0.510, 0.280, 1.000);
 }
 
 @font-face { 
@@ -28,6 +29,8 @@ body{
 	font-size: calc(var(--index) * 2);
 	font-family: raleway_c, sans-serif;
 	line-height: 1.75;
+	height: var(--depth);
+	font-weight: 300;
 }
 
 .container{
@@ -49,4 +52,68 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: var(--transition), opacity .75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+h1, h2, h3, h4 {
+	font-weight: 100;
+	text-transform: uppercase;
+	width: min-content;
+	line-height: 1;
+}
+.frame h2 {
+	text-align: center;
+	font-size: var(--index) * 3.3;
+}
+.frame-media {
+	position: relative;
+	width: calc(var(--index) * var(--side-small));
+	height: calc(var(--index) * var(--side-big));
+	background-position: center;
+	background-size: cover;
+}
+.frame-media_left {
+	right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame-media_right {
+	left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame_bg {
+	background-color: rgb(0 0 0 / .8);
+}
+
+video.frame-media {
+	width: calc(var(--index) * var(--side-big));;
+	height: calc(var(--index) * var(--side-small));;
+}
+
+video.frame-media_left {
+	right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+video.frame-media_right {
+	left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+.text-right > * {
+	position: relative;
+	left: 18vw;
+}
+
+.text-left > * {
+	position: relative;
+	right: 18vw;
+}
+
+.frame h3 {
+	font-size: calc(var(--index) * 3);
+	right: 5vw;
+}
+
+.frame p {
+	max-width: 60vw;
 }
