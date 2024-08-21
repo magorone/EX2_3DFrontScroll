@@ -1,4 +1,4 @@
-*{			 /* Сброс для всех элементов */
+*{		
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -13,12 +13,12 @@
 
 @font-face { 
 	font-family: raleway_c;
-	src: url(./fonts/realway-v22-cyrillic-300.woff2);
+	src: url(../fonts/raleway-v22-cyrillic-100.woff2);
 	font-weight: 300;
 }	
 @font-face {
 	font-family: raleway_c;
-	src: url(./fonts/realway-v22-cyrillic-100.woff2);
+	src: url(../fonts/raleway-v22-cyrillic-100.woff2);
 	font-weight: 100;
 }	
 
